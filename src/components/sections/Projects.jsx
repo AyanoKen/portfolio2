@@ -17,8 +17,7 @@ export default function Projects() {
   return (
     <SectionShell id="game-projects">
       <SectionHeading
-        eyebrow="Game Development"
-        title="Cinematic | VR | Systems-Driven Builds"
+        title="Game Development"
         description="Flagship projects across Unreal and Unity with a focus on narrative, systems design, and resilient engineering."
       />
       <div className="space-y-10">

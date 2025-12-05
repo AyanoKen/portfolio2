@@ -25,25 +25,35 @@ export default function App() {
 }
 
 function AppShell() {
+  const { setTheme } = useTheme();
+
   useEffect(() => {
+    // Smooth scrolling init
     const lenis = new Lenis({
       smoothWheel: true,
       duration: 1.1,
       easing: (t) => 1 - Math.pow(1 - t, 3),
-    })
+    });
 
-    let rafId
+    let rafId;
     const raf = (time) => {
-      lenis.raf(time)
-      rafId = requestAnimationFrame(raf)
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
+
+    const today = new Date().getDate(); 
+    if (today % 2 === 0) {
+      setTheme("ares");
+    } else {
+      setTheme("legacy");
     }
-    rafId = requestAnimationFrame(raf)
 
     return () => {
-      cancelAnimationFrame(rafId)
-      lenis.destroy()
-    }
-  }, [])
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, [setTheme]);
 
   const { tokens } = useTheme()
   const isNovelsPage =
@@ -74,18 +84,18 @@ function AppShell() {
         />
         <div className="tron-trails" />
         <div className="tron-bikes" />
-        <ThemeToggle className="fixed left-1/2 top-6 z-40 -translate-x-1/2" />
+        {/* <ThemeToggle className="fixed left-1/2 top-6 z-40 -translate-x-1/2" /> */}
         <PageTransition>
           {isNovelsPage ? (
             <NovelsPage />
           ) : (
             <main className="relative z-10 flex flex-col gap-24 pb-24">
               <Hero />
-              <Capabilities />
-              <About />
+              {/* <Capabilities /> */}
+              {/* <About /> */}
               <Projects />
               <OtherProjects />
-              <Artworks />
+              {/* <Artworks /> */}
               <Skills />
               <Contact />
             </main>

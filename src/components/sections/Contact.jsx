@@ -16,7 +16,7 @@ export default function Contact() {
           <SectionHeading
             eyebrow="Kireet Gannavarapu"
             title="Game Developer|Game Designer|Game AI Engineer|SDET"
-            description="+1(765)4098813 | Kireet.gannavarapu@gmail.com |GitHub | Portfolio"
+            description="+1(765)4098813 | Kireet.gannavarapu@gmail.com | GitHub "
           />
           <motion.div
             className="grid gap-6 sm:grid-cols-2"
@@ -29,6 +29,7 @@ export default function Contact() {
                 <a
                   key={detail.text}
                   href={detail.href}
+                  target="_blank"
                   className="rounded-2xl border p-4"
                   style={{ borderColor: tokens.cardBorder, color: tokens.textPrimary }}
                 >

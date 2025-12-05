@@ -60,7 +60,7 @@ export default function Hero() {
               </motion.div>
             ))}
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          {/* <div className="grid gap-4 sm:grid-cols-2">
             {heroStats.map((stat) => (
               <GlowCard key={stat.label}>
                 <p className="text-xs uppercase tracking-[0.4em]" style={{ color: tokens.eyebrow }}>
@@ -74,16 +74,16 @@ export default function Hero() {
                 </p>
               </GlowCard>
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="relative flex-1">
-          <motion.div
+          {/* <motion.div
             className="pointer-events-none absolute inset-0 rounded-[40px] border"
             style={{ y: backgroundY, borderColor: tokens.cardBorder }}
             animate={{ opacity: [0.6, 0.9, 0.6] }}
             transition={{ ...transitions.long, repeat: Infinity }}
-          />
-          <motion.div
+          /> */}
+          {/* <motion.div
             className="pointer-events-none absolute inset-0"
             style={{
               y: backgroundY,
@@ -91,23 +91,23 @@ export default function Hero() {
               backgroundSize: '48px 48px',
               opacity: 0.35,
             }}
-          />
-          <motion.div
+          /> */}
+          {/* <motion.div
             className="pointer-events-none absolute -inset-10 rounded-[40px] blur-3xl"
             style={{ y: midgroundY, background: `linear-gradient(135deg, ${tokens.accentSoft}, transparent)` }}
-          />
-          <motion.div
+          /> */}
+          {/* <motion.div
             className="pointer-events-none absolute left-10 top-6 h-32 w-32 rounded-full blur-2xl"
             style={{ y: backgroundY, background: tokens.accentGlow }}
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ ...transitions.long, repeat: Infinity }}
-          />
-          <ProgressiveImage
+          /> */}
+          {/* <ProgressiveImage
             src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80&sat=-100"
             alt={heroContent.name}
             className="h-[28rem]"
-          />
-          <motion.div
+          /> */}
+          {/* <motion.div
             className="absolute inset-x-8 bottom-8 rounded-2xl border p-6 text-sm backdrop-blur-2xl"
             style={{
               y: midgroundY,
@@ -132,7 +132,7 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </SectionShell>

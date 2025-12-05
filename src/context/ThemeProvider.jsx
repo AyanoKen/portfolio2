@@ -9,7 +9,7 @@ const themeTokens = {
     accentContrast: '#02050d',
     accentSoft: 'rgba(0, 246, 255, 0.2)',
     background: '#03060f',
-    backgroundGradient: 'radial-gradient(circle at 20% 20%, #041a2c, #03060f 55%)',
+    backgroundGradient: 'radial-gradient(circle at 50% 50%, #000000ff, #070822ff 95%)',
     cardBorder: 'rgba(0, 247, 255, 0.18)',
     cardBackground: 'rgba(4, 14, 25, 0.85)',
     cardInner: 'linear-gradient(180deg, rgba(0, 247, 255, 0.08), rgba(3, 6, 15, 0.95))',
@@ -38,7 +38,7 @@ const themeTokens = {
     accentContrast: '#1a0202',
     accentSoft: 'rgba(255, 0, 0, 0.22)',
     background: '#050003',
-    backgroundGradient: 'radial-gradient(circle at 20% 20%, #250007, #050003 55%)',
+    backgroundGradient: 'radial-gradient(circle at 50% 50%, #000000ff, #340808ff 95%)',
     cardBorder: 'rgba(255, 0, 0, 0.45)',
     cardBackground: 'rgba(20, 2, 4, 0.92)',
     cardInner: 'linear-gradient(180deg, rgba(255, 0, 0, 0.16), rgba(5, 0, 3, 0.95))',
@@ -82,7 +82,10 @@ export function ThemeProvider({ children }) {
 
   const toggleTheme = () => setTheme((prev) => (prev === 'legacy' ? 'ares' : 'legacy'))
 
-  const value = useMemo(() => ({ theme, tokens: themeTokens[theme], toggleTheme }), [theme])
+  const value = useMemo(
+    () => ({ theme, tokens: themeTokens[theme], toggleTheme, setTheme }),
+    [theme]
+  )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }

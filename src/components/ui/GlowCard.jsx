@@ -32,7 +32,7 @@ export default function GlowCard({ children, className = '', ...props }) {
       >
         <div
           className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-70"
-          style={{ background: `radial-gradient(circle, ${tokens.accentGlow}, transparent 60%)` }}
+          // style={{ background: `radial-gradient(circle, ${tokens.accentGlow}, transparent 60%)` }}
         />
         <div className="relative z-10">{children}</div>
       </div>

@@ -150,8 +150,7 @@ export const contactDetails = [
   { text: 'Kireet.gannavarapu@gmail.com', href: 'mailto:Kireet.gannavarapu@gmail.com' },
   { text: 'GitHub', href: 'https://github.com/Ayano' },
   { text: 'LinkedIn', href: 'https://www.linkedin.com/in/kireet-gannavarapu/' },
-  { text: 'Resume', href: 'https://drive.google.com/file/d/12YGeKyddg518LkW66qolK8HkwsmEm9wV/view?usp=sharing' },
-  { text: 'Portfolio', href: '/' },
+  { text: 'Resume', href: 'https://drive.google.com/file/d/10d5bNcj3dKnL9rEC9cmUzyC2gxwx1cFE/view?usp=sharing' },
 ]
 
 export const novelsPage = {

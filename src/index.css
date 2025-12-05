@@ -51,16 +51,11 @@ body {
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
   background:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 3px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0, rgba(255, 255, 255, 0.01) 1px, transparent 3px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0, rgba(255, 255, 255, 0.012) 1px, transparent 12px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0, rgba(255, 255, 255, 0.01) 1px, transparent 12px),
     radial-gradient(circle at top center, var(--tron-primary-weak), transparent 45%);
-  pointer-events: none;
-  z-index: -1;
-  mix-blend-mode: screen;
+  opacity: 0.3;
   animation: gridShift 24s linear infinite;
 }
 
@@ -73,8 +68,8 @@ body::before {
     radial-gradient(circle at 20% 30%, var(--tron-primary-weak), transparent 35%),
     radial-gradient(circle at 80% 70%, var(--tron-secondary-weak), transparent 30%);
   mix-blend-mode: screen;
-  opacity: 0.3;
-  animation: tronPulse 8s ease-in-out infinite;
+  opacity: 0.18; /* softer */
+  animation: tronPulse 14s ease-in-out infinite; /* slower pulse */
 }
 
 .tron-bars {
@@ -82,16 +77,11 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 6;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.06) 5%,
-    transparent 10%
-  );
-  background-size: 100% 18px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.04) 5%, transparent 10%);
+  background-size: 100% 24px; /* wider spacing */
   mix-blend-mode: screen;
-  opacity: 0.2;
-  animation: tronSweep 7s linear infinite;
+  opacity: 0.08;
+  animation: tronSweep 28s linear infinite; /* slow sweep */
 }
 
 @keyframes tronPulse {
@@ -130,7 +120,7 @@ body::before {
   inset: -10%;
   z-index: 8;
   mix-blend-mode: screen;
-  opacity: 0.45;
+  opacity: 0.08;
 }
 
 .tron-trails::before,
@@ -139,21 +129,21 @@ body::before {
   position: absolute;
   inset: 0;
   background-repeat: repeat;
-  background-size: 10px 240px;
+  background-size: 20px 420px; /* stretched lines */
   background-image: radial-gradient(circle, var(--tron-primary) 0%, transparent 60%);
-  filter: drop-shadow(0 0 8px var(--tron-primary));
+  filter: drop-shadow(0 0 6px var(--tron-primary));
 }
 
 .tron-trails::before {
-  animation: trailY 9s linear infinite, trailFade 6s ease-in-out infinite;
-  opacity: 0.7;
+  animation: trailY 36s linear infinite;
+  opacity: 0.5;
 }
 
 .tron-trails::after {
   background-image: radial-gradient(circle, var(--tron-secondary) 0%, transparent 60%);
-  background-size: 10px 260px;
-  animation: trailX 11s linear infinite reverse, trailFade 7s ease-in-out infinite;
-  opacity: 0.6;
+  background-size: 20px 460px;
+  animation: trailX 40s linear infinite reverse;
+  opacity: 0.45;
 }
 
 @keyframes trailY {
@@ -208,8 +198,8 @@ body::before {
   inset: -5%;
   z-index: 9;
   mix-blend-mode: screen;
-  opacity: 0.55;
-  filter: blur(0.2px);
+  opacity: 0.25;
+  filter: blur(0.8px);
 }
 
 .tron-bikes::before,
@@ -230,8 +220,8 @@ body::before {
     ),
     repeating-linear-gradient(
       90deg,
-      var(--tron-primary) 0,
-      var(--tron-primary) 3px,
+      var(--tron-primary) 2px,
+      var(--tron-primary) 2px,
       transparent 3px,
       transparent 90px
     ),
@@ -244,7 +234,7 @@ body::before {
     );
   background-size: 220px 2px, 240px 2px, 260px 2px;
   background-position: 0 10%, 0 35%, 0 60%;
-  animation: bikesX 7s linear infinite;
+  animation: bikesX 16s linear infinite;
 }
 
 .tron-bikes::after {
@@ -373,3 +363,5 @@ h4 {
   border-radius: 999px;
   box-shadow: 0 0 10px var(--novel-scroll-thumb-shadow, rgba(0, 255, 255, 0.35));
 }
+
+
